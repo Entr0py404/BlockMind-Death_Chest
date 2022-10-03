@@ -1,0 +1,124 @@
+{
+  "mod_elements": [
+    {
+      "name": "DeathChest",
+      "type": "block",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "death_chest"
+    },
+    {
+      "name": "DeathChestOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "death_chest_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BeforePlayerDies",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "before_player_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DisableDeathChest",
+      "type": "gamerule",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disableDeathChest",
+      "metadata": {
+        "type": "logic"
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "gamerule.disableDeathChest": "Disable death chest",
+      "gamerule.disableDeathChest.description": "Disable death chest",
+      "block.blockmind_death_chest.death_chest": "Death Chest",
+      "block.death_chest.death_chest": "Death Chest"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "blockmind_death_chest",
+    "modName": "BlockMind - Death Chest",
+    "version": "1.0.0",
+    "author": "Entropy",
+    "websiteURL": "https://mcreator.net",
+    "license": "MIT License",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.18.2",
+    "credits": "Created using mod maker MCreator - ",
+    "modElementsPackage": "net.blockmind.deathchest",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200234517
+}

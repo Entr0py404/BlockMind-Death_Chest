@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="MIT License"
+
+[[mods]]
+modId="blockmind_death_chest"
+version="1.0.0"
+displayName="BlockMind - Death Chest"
+credits="Created using mod maker MCreator - "
+displayURL="https://mcreator.net"
+authors="Entropy"
+
+[[dependencies.blockmind_death_chest]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

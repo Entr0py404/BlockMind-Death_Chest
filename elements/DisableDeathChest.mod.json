@@ -1,0 +1,12 @@
+{
+  "_fv": 33,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "Disable death chest",
+    "description": "Disable death chest",
+    "category": "PLAYER",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

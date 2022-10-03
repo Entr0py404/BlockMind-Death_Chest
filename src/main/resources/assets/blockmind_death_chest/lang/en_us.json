@@ -1,0 +1,6 @@
+{
+  "gamerule.disableDeathChest": "Disable death chest",
+  "gamerule.disableDeathChest.description": "Disable death chest",
+  "block.blockmind_death_chest.death_chest": "Death Chest",
+  "block.death_chest.death_chest": "Death Chest"
+}
