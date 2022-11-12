@@ -3,5 +3,6 @@
   "textures": {
     "all": "blockmind_death_chest:blocks/b001",
     "particle": "blockmind_death_chest:blocks/b001"
-  }
+  },
+  "render_type": "solid"
 }

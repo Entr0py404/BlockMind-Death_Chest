@@ -24,6 +24,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Containers;
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
@@ -32,15 +33,13 @@ import net.minecraft.client.Minecraft;
 import net.blockmind.deathchest.procedures.DeathChestOnBlockRightClickedProcedure;
 import net.blockmind.deathchest.block.entity.DeathChestBlockEntity;
 
-import java.util.Random;
-
 public class DeathChestBlock extends FallingBlock
 		implements
 
 			EntityBlock {
 	public DeathChestBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_CYAN).sound(SoundType.AMETHYST).strength(-1, 3600000)
-				.lightLevel(s -> 15).noCollission().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).noDrops());
+				.lightLevel(s -> 15).noCollission().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).noLootTable());
 	}
 
 	@Override
@@ -60,7 +59,7 @@ public class DeathChestBlock extends FallingBlock
 
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	public void animateTick(BlockState blockstate, Level world, BlockPos pos, Random random) {
+	public void animateTick(BlockState blockstate, Level world, BlockPos pos, RandomSource random) {
 		super.animateTick(blockstate, world, pos, random);
 		Player entity = Minecraft.getInstance().player;
 		int x = pos.getX();

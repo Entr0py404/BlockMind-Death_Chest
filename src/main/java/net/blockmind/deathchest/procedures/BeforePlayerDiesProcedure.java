@@ -2,11 +2,11 @@ package net.blockmind.deathchest.procedures;
 
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -53,15 +53,14 @@ public class BeforePlayerDiesProcedure {
 							BlockEntity _blockEntity = world.getBlockEntity(_bp);
 							BlockState _bs = world.getBlockState(_bp);
 							if (_blockEntity != null)
-								_blockEntity.getTileData().putString("Owner", (entity.getDisplayName().getString()));
+								_blockEntity.getPersistentData().putString("Owner", (entity.getDisplayName().getString()));
 							if (world instanceof Level _level)
 								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 						}
 						LoopIndex = 0;
 						{
 							AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-							entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-									.ifPresent(capability -> _iitemhandlerref.set(capability));
+							entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _iitemhandlerref.set(capability));
 							if (_iitemhandlerref.get() != null) {
 								for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 									ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
@@ -71,7 +70,7 @@ public class BeforePlayerDiesProcedure {
 											final int _slotid = (int) LoopIndex;
 											final ItemStack _setstack = itemstackiterator;
 											_setstack.setCount((itemstackiterator).getCount());
-											_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+											_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 												if (capability instanceof IItemHandlerModifiable)
 													((IItemHandlerModifiable) capability).setStackInSlot(_slotid, _setstack);
 											});

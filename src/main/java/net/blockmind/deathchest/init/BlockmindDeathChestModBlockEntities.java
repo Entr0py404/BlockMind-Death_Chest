@@ -15,7 +15,7 @@ import net.blockmind.deathchest.block.entity.DeathChestBlockEntity;
 import net.blockmind.deathchest.BlockmindDeathChestMod;
 
 public class BlockmindDeathChestModBlockEntities {
-	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES,
+	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES,
 			BlockmindDeathChestMod.MODID);
 	public static final RegistryObject<BlockEntityType<?>> DEATH_CHEST = register("death_chest", BlockmindDeathChestModBlocks.DEATH_CHEST,
 			DeathChestBlockEntity::new);

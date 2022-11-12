@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
 public class DeathChestOnBlockRightClickedProcedure {
@@ -16,7 +16,7 @@ public class DeathChestOnBlockRightClickedProcedure {
 			public String getValue(LevelAccessor world, BlockPos pos, String tag) {
 				BlockEntity blockEntity = world.getBlockEntity(pos);
 				if (blockEntity != null)
-					return blockEntity.getTileData().getString(tag);
+					return blockEntity.getPersistentData().getString(tag);
 				return "";
 			}
 		}.getValue(world, new BlockPos(x, y, z), "Owner")).equals(entity.getDisplayName().getString())) {
@@ -27,11 +27,11 @@ public class DeathChestOnBlockRightClickedProcedure {
 			}
 		} else {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(new TextComponent(("This death chest belongs to " + (new Object() {
+				_player.displayClientMessage(Component.literal(("This death chest belongs to " + (new Object() {
 					public String getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
-							return blockEntity.getTileData().getString(tag);
+							return blockEntity.getPersistentData().getString(tag);
 						return "";
 					}
 				}.getValue(world, new BlockPos(x, y, z), "Owner")))), (true));
